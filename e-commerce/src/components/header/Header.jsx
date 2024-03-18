@@ -2,7 +2,8 @@
 import Search from './Search';
 // import primaryLogo from './primaryLogo.jpeg';
 import CustomButtons from './CustomButtons';
-import {AppBar, Toolbar, Typography, styled, Box} from '@mui/material';
+
+import {AppBar, Toolbar, styled, Box} from '@mui/material';
 
 const StyledHeader = styled(AppBar)`
     background : #2874f0;
@@ -31,6 +32,16 @@ const CustomButtonWrapper = styled(Box)`
 const Header = () => {
     //const logoURL = 'e-commerce/public/primaryLogo.jpeg'
     return(
+    //     const [open, setOpen] = useState(false);
+
+    // const handleClose = () => {
+    //     setOpen(false);
+    // }
+
+    // const handleOpen = () => {
+    //     setOpen(true);
+    // }
+
         <StyledHeader>
             <Toolbar style={{ minHeight : 55}}>
                 <Component>

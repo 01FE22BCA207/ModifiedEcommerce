@@ -11,6 +11,8 @@ const Component = styled(Box)`
     background : #F2F2F2;
 `
 
+
+
 const Home = () => {
     return(
         <Fragment>

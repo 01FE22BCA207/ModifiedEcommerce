@@ -2,7 +2,7 @@
 import { Box, Button, styled } from '@mui/material';
 
 
-const LeftContainer = styled(Box)(({}) =>({
+const LeftContainer = styled(Box)(({theme}) =>({
     minWidth: '40%',
     padding: '40px 0 0  80px',
     [theme.breakpoints.down('lg')]: {

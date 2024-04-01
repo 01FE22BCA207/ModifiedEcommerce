@@ -1,6 +1,6 @@
 import { Typography, Box, Table, TableBody, TableRow, TableCell, styled } from '@mui/material';
-import { localoffer as Badge } from '@mui/material';
-import { toBeDisabled } from '@testing-library/jest-dom/matchers';
+import {  Badge } from '@mui/material';
+//import { toBeDisabled } from '@testing-library/jest-dom/matchers';
 
 const SmallText = styled(Box)
     `font - size: 14px;
@@ -16,7 +16,7 @@ color: #00CC00;
 font - size: 15px;`
 
 
-const ColumnText = style(TableRow)
+const ColumnText = styled(TableRow)
     `font - size: 14px;
 vertical - align: baseline;
 
@@ -35,7 +35,7 @@ const ProductDetail = ({ product }) => {
             <Typography>(product.title.longTitle)</Typography>
             <Typography style={{ marginTop: 5, color: '#878787', fontsize: 14 }}>
                 8 Ratings & 1 Reviews
-                <Box component="span"><img src={fassured} style={{ width: 77, marginLeft: 20 }} /></Box>
+                <Box component="span"><img src={fassured} style={{ width: 77, marginLeft: 20 }} alt="flipkartpoints"  /></Box>
             </Typography>
             <Typography>
                 <Box component="span" styled={{ fontsize: 20 }}>{product.price.cost}</Box>&nbsp;&nbsp;&nbsp;

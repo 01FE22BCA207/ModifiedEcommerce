@@ -1,5 +1,6 @@
 
 import { Box, Button, styled } from '@mui/material';
+//import { dealData } from '../../Constant/data';
 
 
 const LeftContainer = styled(Box)(({theme}) =>({
@@ -31,11 +32,11 @@ const StyledButton = styled(Button)(({ theme }) =>({
 }));
   
 
-const ActionItem = ({ product }) => {
+const ActionItem = ({product}) => {
     return(
         <LeftContainer>
-        <Box style={{ padding: '15px  200px', border: '1px solid #f0f0f0',  width: '90%'}}>
-            <Image src={product.detailurl} alt ="product" />
+        <Box style={{ padding: '15px  180px', border: '1px solid #f0f0f0',  width: '50%'}}>
+            <Image src={product.detailUrl}  alt='product' />
         </Box>
         <StyledButton variant ="contained" style={{marginRight: 10, background: '#f99fee'}}>Add to Cart</StyledButton>
         <StyledButton variant ="contained" style={ {background:'#fb541b'}}>Buy Now</StyledButton>

@@ -1,5 +1,6 @@
 import  React,{ useState, useContext } from 'react';
 
+
 import {  useSelector } from 'react-redux';
 
 import { Box, Typography, Badge, Button, styled } from '@mui/material';
@@ -42,8 +43,9 @@ const Wrapper = styled(Box)(({ theme }) => ({
 
 const LoginButton = styled(Button)(({ theme }) => ({
     color: '#2874f0',
+    left:8,
     background: '#FFFFFF',
-    textTransform: 'none',
+    textTransform: 'white',
     fontWeight: 600,
     borderRadius: 2,
     padding: '5px 40px',
@@ -73,6 +75,8 @@ const CustomButtons = () => {
             {
                 account ? <Profile account={account} setAccount={setAccount} /> :
                     <LoginButton variant="contained" onClick={() => openDialog()}>Login</LoginButton>
+                    
+
                 
             }
             <Typography style={{ marginTop: 3, width: 135 }}>Become a Seller</Typography>

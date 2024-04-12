@@ -12,6 +12,7 @@ const StyledHeader = styled(AppBar)`
 const Component = styled(Box)`
     margin-left : 12%;
     line-height : 0;
+
 `
 
 // const SubHeading = styled(Typography)`
@@ -45,7 +46,7 @@ const Header = () => {
         <StyledHeader>
             <Toolbar style={{ minHeight : 55}}>
                 <Component>
-                  <img src = {require('../../images/Primary_Logo.jpg')} alt="Logo" style={{ width : 48 }} />
+                  <img src = {require('../../images/nav_bar_logo.jpg')} alt="Logo" style={{ width : 55, padding : 0}} />
                   {/* <Box style={{ display : 'flex'}}> */}
                     {/* <SubHeading> */}
                         {/* Explor&nbsp;     */}

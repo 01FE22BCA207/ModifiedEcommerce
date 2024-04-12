@@ -8,24 +8,24 @@ import bodyParser from 'body-parser';
 
 import Connection from './database/db.js';
 import DefaultData from './default.js';
-import Router from './routes/route.js';
-
-const app = express();
+import router from './routes/route.js';
 
 dotenv.config();
-app.use(cors());
-app.use(bodyParser.json({extended :true}));
-app.use(bodyParser.urlencoded({ extended :true}));
-app.use('/',Router);
+const app = express();
 
 const PORT = 8000;
 
-const USERNAME = process.env.DB_USERNAME;
-const PASSWORD = process.env.DB_PASSWORD;
 
-Connection(USERNAME, PASSWORD);
+const username = process.env.DB_USERNAME;
+const password = process.env.DB_PASSWORD;
+
+Connection(username, password);
 
 
-app.listen(PORT, () => console.log(`Server is running on  https:localhost:${PORT}`));
-
+app.listen(PORT, () => console.log(`Server is running successfully  on PORT ${PORT}`));
 DefaultData();
+
+app.use(bodyParser.json({extended :true}));
+app.use(bodyParser.urlencoded({ extended :true}));
+app.use(cors());
+app.use('/',router);

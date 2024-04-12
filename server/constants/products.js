@@ -90,7 +90,7 @@ export const products = [
         tagline: 'Kubra, Nova & more' 
     },
     { 
-        id: 'product6',
+        id:'product6',
         url: 'https://rukminim1.flixcart.com/image/150/150/kk01pjk0/fan/d/d/l/tiktik-quiet-portable-table-fan-zigma-original-imafzg7ftzuckpad.jpeg?q=70',
         detailUrl: 'https://rukminim1.flixcart.com/image/416/416/kk01pjk0/fan/d/d/l/tiktik-quiet-portable-table-fan-zigma-original-imafzg7ftzuckpad.jpeg?q=70', 
         title: {
@@ -125,4 +125,5 @@ export const products = [
         discount: 'Minimum 50% Off', 
         tagline: 'Grab Now!' 
     }
+    
 ];

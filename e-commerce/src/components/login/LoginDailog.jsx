@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { Dialog, DialogContent, TextField, Box, Button, Typography, styled } from '@mui/material';
 
-import { authenticateLogin, authenticateSignup } from '../../service/api';
+import { authenticateLogin, authenticateSignup } from '../../service/api.js';
 
 const Component = styled(DialogContent)`
     height: 70vh;
@@ -19,14 +19,14 @@ const LoginButton = styled(Button)`
     border-radius: 2px;
 `;
 
-const RequestOTP = styled(Button)`
-    text-transform: none;
-    background: #fff;
-    color: #2874f0;
-    height: 48px;
-    border-radius: 2px;
-    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
-`;
+// // const RequestOTP = styled(Button)`
+// //     text-transform: none;
+// //     background: #fff;
+// //     color: #2874f0;
+// //     height: 48px;
+// //     border-radius: 2px;
+// //     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%);
+// `;
 
 const Text = styled(Typography)`
     color: #878787;
@@ -61,9 +61,9 @@ const Error = styled(Typography)`
     font-weight: 600;
 `
 // height: 70vh;
-    
+
 const Image = styled(Box)`
-    background: #2874f0 url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/login_img_c4a81e.png) center 85% no-repeat;
+    background: #2874f0 url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img) center 85% no-repeat;
     width: 40%;
     height: 100%;
     padding: 45px 35px;
@@ -152,17 +152,18 @@ const LoginDialog = ({ open, setOpen, setAccount }) => {
                     <Image>
                         <Typography variant="h5">{account.heading}</Typography>
                         <Typography style={{marginTop: 20}}>{account.subHeading}</Typography>
+                        <img src = {require('../../images/beside_login.jpg')} alt="Logo" style={{ width : 130, padding : 0,position: 'absolute',bottom: 40, left: 50 }} />
                     </Image>
                     {
                         account.view === 'login' ? 
                         <Wrapper>
-                            <TextField variant="standard" onChange={(e) => onValueChange(e)} name='username' label='Enter Email/Mobile number' />
-                            { error && <Error>Please enter valid Email ID/Mobile number</Error> }
+                            <TextField variant="standard" onChange={(e) => onValueChange(e)} name='username' label='Enter Username' />
+                            { error && <Error>Please enter valid Username</Error> }
                             <TextField variant="standard" onChange={(e) => onValueChange(e)} name='password' label='Enter Password' />
                             <Text>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Text>
                             <LoginButton onClick={() => loginUser()} >Login</LoginButton>
-                            <Text style={{textAlign:'center'}}>OR</Text>
-                            <RequestOTP>Request OTP</RequestOTP>
+                            {/* <Text style={{textAlign:'center'}}>OR</Text>
+                            <RequestOTP>Request OTP</RequestOTP> */}
                             <CreateAccount onClick={() => toggleSignup()}>New to Flipkart? Create an account</CreateAccount>
                         </Wrapper> : 
                         <Wrapper>

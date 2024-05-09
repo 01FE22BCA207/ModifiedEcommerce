@@ -6,7 +6,7 @@ import CustomButtons from './CustomButtons';
 import {AppBar, Toolbar, styled, Box} from '@mui/material';
 
 const StyledHeader = styled(AppBar)`
-    background : #2874f0;
+    background :orange;
     height : 55px;               //Default AppBar component height is 64px
 `
 const Component = styled(Box)`

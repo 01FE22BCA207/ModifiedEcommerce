@@ -63,7 +63,7 @@ const Error = styled(Typography)`
 // height: 70vh;
 
 const Image = styled(Box)`
-    background: #2874f0 url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img) center 85% no-repeat;
+    background: orange url(https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img) center 85% no-repeat;
     width: 40%;
     height: 100%;
     padding: 45px 35px;

@@ -66,18 +66,31 @@ const Cart = () => {
         dispatch(removeFromCart(id));
     }
 
+    //   const buyNow = async () => {
+    //     let response = await payUsingPaytm({ amount: 500, email: 'vijayaralimatti4@gmail.com'});
+    //     var information = {
+    //         action: 'https://securegw-stage.paytm.in/order/process',
+    //         params: response    
+    //     }
+    //     post(information);
+    // }
     const buyNow = async () => {
-        let response = await payUsingPaytm({ amount: 500, email: 'kunaltyagi@gmail.com'});
-        var information = {
-            action: 'https://securegw-stage.paytm.in/order/process',
-            params: response    
+        let response = await payUsingPaytm({ amount: 500, email: 'vijayaralimatti4@gmail.com'});
+    
+        if (response && typeof response === 'object') {
+            var information = {
+                action: 'https://securegw-stage.paytm.in/order/process',
+                params: response    
+            };
+            post(information);
+        } else {
+            console.error('Invalid response from payUsingPaytm:', response);
         }
-        post(information);
     }
 
     return (
         <>
-        { cartItems.length ? 
+        { cartItems && cartItems.length > 0 ? 
             <Component container>
                 <LeftComponent item lg={9} md={9} sm={12} xs={12}>
                     <Header>
@@ -102,3 +115,4 @@ const Cart = () => {
 }
 
 export default Cart;
+

@@ -31,7 +31,8 @@ export  const payUsingPaytm = async (data) => {
       let response = await axios.post(`${URL}/payment`, data);
       return response.data;
   } catch (error) {
-      console.log('Error', error);
+      console.log('Error in payUsingPaytem', error);
+      
   }
 }
 

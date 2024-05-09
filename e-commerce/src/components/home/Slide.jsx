@@ -49,7 +49,7 @@ const Timer = styled(Box)`
 
 const ViewAllButton = styled(Button)`
     margin-left: auto;
-    background-color: #2874f0;
+    background-color: Orange;
     border-radius: 2px;
     font-size: 13px;
 `;
@@ -71,6 +71,9 @@ const RenderTimer = styled(Box)(({ theme }) => ({
 }));
       
 const MultiSlide = ({ data, timer, title }) => {
+    if(!Array.isArray(data)||data.length===0){
+        return null;
+    }
     const timerURL = 'https://static-assets-web.flixcart.com/www/linchpin/fk-cp-zion/img/timer_a73398.svg';
 
     const renderer = ({ hours, minutes, seconds }) => {
@@ -104,12 +107,13 @@ const MultiSlide = ({ data, timer, title }) => {
                 // removeArrowOnDeviceType={["tablet", "mobile"]}
                 dotListClass="custom-dot-list-style"
                 itemClass="carousel-item-padding-40-px"
+
             >
                 {
                     data.map(temp => (
                         <Link to={`product/${temp.id}`} style={{textDecoration: 'none'}}>
                             <Box textAlign="center" style={{ padding: '25px 15px' }}>
-                                <Image src={temp.url} />
+                                <Image src={temp.url}  />
                                 <Text style={{ fontWeight: 600, color: '#212121' }}>{temp.title.shortTitle}</Text>
                                 <Text style={{ color: 'green' }}>{temp.discount}</Text>
                                 <Text style={{ color: '#212121', opacity: '.6' }}>{temp.tagline}</Text>

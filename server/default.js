@@ -6,7 +6,7 @@ import { Connection } from './database/db.js';
 
 const DefaultData = async () => {
     try {
-        await Connection();
+        
         await Product.collection.deleteMany({});
         await Product.insertMany(products);
 
